@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    input(type='hidden', id='user', value='#{userColor}')
+    h1= title
+    div(class="profile")
+        if userColor
+            #{picurl}
+            img(src=picurl)
+            form(action="/logout", method="get")
+                p 
+                    input(type="submit", name="submit", class="submit", value="Logout")
+            form(id="colorPick")
+                label Change Background Color:
+                input(id="color")
+                input(type="submit") 
+        else
+            form(action="/login", method="get")
+                p 
+
+                    input(type="submit", name="submit", class="submit", value="Login") 
+block js
+    script( src="/javascripts/main.js" )

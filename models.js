@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var UserSchema = mongoose.Schema({
 	facebookId: String,
-	colorCode: String
+	colorVal: String
 });
 
 var User = mongoose.model('User', UserSchema);
